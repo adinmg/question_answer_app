@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <title>Genre Prediction</title>
+</head>
+
+<body>
+
+    <div class="container my-4">
+
+        <div class="info alert-info my-4" role="info">
+
+            <div class="container">
+                <div class="content">
+
+                    <h1 class="my-4 text-center text-">Question-Answering System</h1>
+
+                    <p>
+                        A question-answering system streamlines the process of obtaining information. Instead of sifting through vast amounts of data, users can simply ask a question and receive a targeted and precise answer. This efficiency boosts productivity and saves valuable time.
+                    </p>
+                    <hr>
+
+                    <h3> Example: </h3>
+
+                    <h4>Context</h4>
+                    <p>
+                    A large language model (LLM) is a type of language model notable for its ability to achieve general-purpose 
+                    language understanding and generation. LLMs acquire these abilities by using massive amounts of data to 
+                    learn billions of parameters during training and consuming large computational resources during their 
+                    training and operation. LLMs are artificial neural networks (mainly transformers) and are 
+                    (pre-)trained using self-supervised learning and semi-supervised learning.
+                    </p>
+                    <p>
+                    As autoregressive language models, they work by taking an input text and repeatedly predicting the next 
+                    token or word. Up to 2020, fine tuning was the only way a model could be adapted to be able to 
+                    accomplish specific tasks. Larger sized models, such as GPT-3, however, can be prompt-engineered to 
+                    achieve similar results. They are thought to acquire embodied knowledge about syntax, semantics and 
+                    "ontology" inherent in human language corpora, but also inaccuracies and biases present in the corpora.
+                    </p>
+                    <p>
+                    Notable examples include OpenAI's GPT models (e.g., GPT-3.5 and GPT-4, used in ChatGPT), Google's PaLM 
+                    (used in Bard), and Meta's LLaMa, as well as BLOOM, Ernie 3.0 Titan, and Anthropic's Claude 2. 
+                    </p>
+
+                
+                    <h4> Question </h4>
+                    <p>
+                        How does a language model work?
+                    </p>
+
+                    <h4> Answer </h4>
+                    <p>
+                        by taking an input text and repeatedly predicting the next token or word
+                    </p>
+
+
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Form -->
+
+        <div></div>
+
+        <form class="my-4" action="/" method="POST">
+            <div class="form-group">
+                <label for="exampleFormControlTextarea1">Enter the Context</label>
+                <textarea class="form-control" id="context" name="context" rows="3"></textarea>
+
+                <label for="exampleFormControlTextarea2">Enter the Question</label>
+                <input type="text" class="form-control" id="question" name="question">
+            </div>
+
+            <!-- button -->
+            <div class="text-center">
+                <button type="submit" class="btn btn-primary">Predict</button>
+            </div>
+
+        </form>
+
+        {%if showresult%}
+            
+            <div class = "container my-4">
+              
+               <div class="alert alert-success" role="alert">
+
+                    <p>Your Context: </p>
+                    <p>{{context}}...</p>
+                
+                    <p>Answer:</p>
+                        <p><span style = "color:rgb(8, 124, 24);font-size:1 rem;">{{answer}}</p>
+                    <p>Score: </p>
+                        <p><span style = "color:red;font-size:1 rem;">{{score}}</p>
+                    <hr>
+
+                </div>
+            </div>
+        {%endif%}
+
+
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+
+</html>
